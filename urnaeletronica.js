@@ -27,7 +27,7 @@ console.log('|2| Candidato 2');
 console.log('|3| Candidato 3');
 console.log('|5| Branco');
 console.log('|8| Nulo');
-console.log('|0| Encerrar a votação');
+
 
 voto = parseInt(prompt('Digite sua opção de voto'));
 
@@ -58,10 +58,30 @@ voto = parseInt(prompt('Digite sua opção de voto'));
       console.log('O nulo recebeu 1 voto');
       break;
       
-    case 0:
+    case 123456:
       console.log('Encerrar o programa')  
       default:
        
+
+    console.log ("O programa esta encerrado")
+
+    console.log ("O total de votos é", totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3+totalVotosBranco+totalVotosNulo);
+    console.log ("O total de votos do candidato 1 é" , totalVotosCandidato1);
+    console.log ("O total de votos do candidato 2 é" , totalVotosCandidato2);
+    console.log ("O total de votos do candidato 3 é" , totalVotosCandidato3);
+    console.log ("O total de votos em Branco é" , totalVotosBranco);
+    console.log ("O total de votos Nulo é" , totalVotosNulo);
+    console.log ("O total de votos validos é" , totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3);
+    console.log ("% de votos no candidato 1 é", totalVotosCandidato1/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3)*100 + "%");
+    console.log ("% de votos no candidato 2 é", totalVotosCandidato2/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3)*100 + "%");
+    console.log ("% de votos no candidato 3 é", totalVotosCandidato3/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3)*100 + "%");
+    console.log ("% de votos em Branco é", totalVotosBranco/totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3+totalVotosBranco+totalVotosNulo*100 + "%");
+    console.log ("% de votos Nulo é", totalVotosNulo/totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3+totalVotosBranco+totalVotosNulo *100 + "%");
+
+
+
+
+
 
     if (voto === 1){
       totalVotosCandidato1++;
@@ -83,6 +103,9 @@ voto = parseInt(prompt('Digite sua opção de voto'));
         totalVotosNulo++;
         console.log('Um voto nulo');      
 
+
+      }  else if (voto === 123456) {
+          console.log('Encerrar Programa');  
 
     }
 

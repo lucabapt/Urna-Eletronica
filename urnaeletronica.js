@@ -7,21 +7,21 @@ console.log('Iniciando o programa');
 
 let
 
-  totalVotosCandidato1 = 0,
-  totalVotosCandidato2 = 0,
-  totalVotosCandidato3 = 0,
-  totalVotosBranco = 0,
-  totalVotosNulo = 0,
+  VotosCandidato1 = 0,
+  VotosCandidato2 = 0,
+  VotosCandidato3 = 0,
+  VotosBranco = 0,
+  VotosNulo = 0,
   nomecandidato1, 
   nomecandidato2, 
   nomecandidato3;
+  encerrarvotacao = '';
 
-
-console.log(totalVotosCandidato1);
-console.log(totalVotosCandidato2);
-console.log(totalVotosCandidato3);
-console.log(totalVotosBranco);
-console.log(totalVotosNulo);
+console.log(VotosCandidato1);
+console.log(VotosCandidato2);
+console.log(VotosCandidato3);
+console.log(VotosBranco);
+console.log(VotosNulo);
 
 nomecandidato1 = prompt  ('Nome do Candidato 1');
 nomecandidato2 = prompt  ('Nome do Candidato 2');
@@ -40,95 +40,71 @@ console.log('|8| Nulo');
 
 voto = parseInt(prompt('Digite sua opção de voto'));
 
-  switch (voto) {
 
-    case 1:
-      totalVotosCandidato1++;
-      console.log("O", nomecandidato1 , "recebeu um voto");
-      break; 
+if (voto === 1){
+  VotosCandidato1++;
+  console.log('O', nomecandidato1 , 'recebeu um voto');
 
-    case 2:
-      totalVotosCandidato2++;
-      console.log("O", nomecandidato2, "recebeu um voto");
-      break;
-      
-    case 3:  
-      totalVotosCandidato3++;
-      console.log("O", nomecandidato3, "recebeu um voto");
-      break;
+} else if (voto === 2) {
+  VotosCandidato2++;
+  console.log('O', nomecandidato2 , 'recebeu um voto');
 
-    case 5:
-      totalVotosBranco++
-      console.log('O Branco recebeu 1 voto');
-      break;
+} else if (voto === 3) {
+    VotosCandidato3++;
+    console.log('O', nomecandidato3, 'recebeu um voto');
+  
+} else if (voto === 5) {
+    VotosBranco5++;
+    console.log('Um voto em branco');
+    
+  } else if (voto === 8) {
+    VotosNulo++;
+    console.log('Um voto nulo');      
 
-    case 8:
-      totalVotosNulo++
-      console.log('O Nulo recebeu 1 voto');
-      break;
-      
-    case 123456:
-      console.log('Encerrar o programa')  
-      default:
+
+  }  else if (voto === 123456) {
+      console.log('Encerrar Programa');  
+
+      encerrarvotacao = prompt ('Deseja realmente encerrar a votação'); 
+
+      if (encerrarvotacao !== 'S' && encerrarvotacao !== 'N') {
+        alert('Opção inválida!');
+
+      }
+
+    encerrarvotacao = prompt('Deseja REALMENTE encerrar a votação? Digite [S] para Sim ou [N] para Não').charAt(0).toUpperCase();
 
     console.log ("O programa esta encerrado")
 
-    console.log ("O total de votos é \n", totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3+totalVotosBranco+totalVotosNulo);
+    console.log ("O total de votos é \n", VotosCandidato1+VotosCandidato2+lVotosCandidato3+VotosBranco+VotosNulo);
 
-    console.log ("O total de votos do",  nomecandidato1, "é\n" , totalVotosCandidato1);
-    console.log ("% de votos no" , nomecandidato1 ,  "é \n", (totalVotosCandidato1/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3)*100 + "%")).toFixed(2);
+    console.log ("O total de votos do",  nomecandidato1, "é\n" , VotosCandidato1);
+    console.log ("% de votos no" , nomecandidato1 ,  "é \n", (VotosCandidato1/(VotosCandidato1+VotosCandidato2+VotosCandidato3)*100 + "%")).toFixed(2);
 
     console.log ("O total de votos do" , nomecandidato2 , "é \n" , totalVotosCandidato2);
-    console.log ("% de votos no", nomecandidato2 ,"é \n", totalVotosCandidato2/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3)*100 + "%").toFixed(2);
+    console.log ("% de votos no", nomecandidato2 ,"é \n", VotosCandidato2/(VotosCandidato1+VotosCandidato2+lVotosCandidato3)*100 + "%").toFixed(2);
 
     console.log ("O total de votos do", nomecandidato3 ,"é \n" , totalVotosCandidato3);
-    console.log ("% de votos no", nomecandidato3, "é \n", (totalVotosCandidato3/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3)*100).toFixed(2) + "%").toFixed(2);
+    console.log ("% de votos no", nomecandidato3, "é \n", (VotosCandidato3/(VotosCandidato1+VotosCandidato2+VotosCandidato3)*100) + "%").toFixed(2);
     
-    console.log ("O total de votos em Branco é \n" , totalVotosBranco);
-    console.log ("% de votos em Branco é \n", totalVotosBranco/((totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3+totalVotosBranco+totalVotosNulo)*100) + "%").toFixed(2);
+    console.log ("O total de votos em Branco é \n" , VotosBranco);
+    console.log ("% de votos em Branco é \n", VotosBranco/((VotosCandidato1+VotosCandidato2+VotosCandidato3+VotosBranco+VotosNulo)*100) + "%");
 
-    console.log ("O total de votos Nulo é \n" , totalVotosNulo);
-    console.log ("% de votos Nulo é \n", totalVotosNulo/(totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3+totalVotosBranco+totalVotosNulo) *100 + "%").toFixed(2);
+    console.log ("O total de votos Nulo é \n" , VotosNulo);
+    console.log ("% de votos Nulo é \n", VotosNulo/(VotosCandidato1+VotosCandidato2+VotosCandidato3+VotosBranco+VotosNulo) *100 + "%");
 
-    console.log ("O total de votos validos é \n" , totalVotosCandidato1+totalVotosCandidato2+totalVotosCandidato3);
+    console.log ("O total de votos validos é \n" , VotosCandidato1+VotosCandidato2+VotosCandidato3);
     
-    if (voto === 1){
-      totalVotosCandidato1++;
-      console.log('O candidato 1 recebeu um voto');
-
-    } else if (voto === 2) {
-      totalVotosCandidato2++;
-      console.log('O candidato 2 recebeu um voto');
-
-    } else if (voto === 3) {
-        totalVotosCandidato3++;
-        console.log('O candidato 3 recebeu um voto');
-      
-    } else if (voto === 5) {
-        totalVotosBranco5++;
-        console.log('Um voto em branco');
-        
-      } else if (voto === 8) {
-        totalVotosNulo++;
-        console.log('Um voto nulo');      
-
-
-      }  else if (voto === 123456) {
-          console.log('Encerrar Programa');  
-
-          encerrarvotacao = prompt ('Deseja realmente encerrar a votação'); 
-
-    }
+    
 
     return;
 
   }
 
-} while (voto !==0);
+} 
 
-console.clear
+while (voto !==0){
 
-}
+console.clear();
 
-
-
+}}
